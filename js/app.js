@@ -19,7 +19,7 @@ $(document).ready(function () {
   }
  });
  // magnific popup
- $('#projects__center').magnificPopup({
+ $('#projects__modal').magnificPopup({
   delegate: 'a', // child items selector, by clicking on it popup will open
   type: 'image',
   gallery: {
@@ -86,25 +86,25 @@ $(document).ready(function () {
 
   ]
   // click event
-  $('.team__single-img').click(function () {
-   $('.team__single-img').not(this).removeClass('active');
+  $('.team-img__item').click(function () {
+   $('.team-img__item').not(this).removeClass('active');
    $(this).addClass('active');
    let id = $(this).attr('data-id')
    // console.log(id);
    // change the name
-   $('.team__member-name').text(data[id].name);
+   $('.team-info__member-name').text(data[id].name);
    // change the job
-   $('.team__member-job').text(data[id].job);
+   $('.team-info__member-job').text(data[id].job);
    // change the text
-   $('.team__member-text').text(data[id].text);
+   $('.team-info__member-text').text(data[id].text);
    // change likes 
-   $('.team__member-single-favorite-text').each(function (index) {
+   $('.team-info__member-single-favorite-text').each(function (index) {
     $(this).text(data[id].favorites[index]);
 
    })
 
    // change photo
-   $('.team__info-img').attr('src', data[id].img)
+   $('.team-info__img').attr('src', data[id].img)
   })
  })();
  // owl carousel
