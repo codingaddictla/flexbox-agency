@@ -125,7 +125,20 @@ $(document).ready(function () {
    }
   }
  })
+ //#################### change icons
  $(".owl-prev").html('<div><i class="fa fa-chevron-left"></i></div>');
  $(".owl-next").html('<div><i class="fa fa-chevron-right"></i></div>');
+ //################ flip cards
+ $('.flipBtn').click(function () {
+
+  $(this).parents('.card-side').addClass('flip-card')
+  console.log(this);
+
+ })
+ $('.flipBackBtn').click(function () {
+  $(this).parents('.card-side').removeClass('flip-card')
+  console.log(this);
+
+ })
 
 })

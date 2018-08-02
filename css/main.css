@@ -8,10 +8,10 @@
 :root{
  --yellow:#ffc914;
  --grey:#b5c2b7;
- --black:#2e282a;
+ --black:rgb(46, 40, 42);
  --blue:#00a7e1;
  --cream:#eddea4;
- --white:#f5f3f5;
+ --white:rgb(245, 243, 245);
 }
 
 body{
@@ -63,7 +63,7 @@ body{
  letter-spacing: 0.25rem;
  margin-left: 1rem;
  text-transform: uppercase;
- color: var(--black);
+ color: var(--blue);
 }
 .banner__title-name{
  color: var(--yellow);
@@ -91,7 +91,7 @@ body{
  left: 0;
  width: 100%;
  height: 100%;
- background: rgba(237, 222, 164,0.4);
+ background: rgba(245, 243, 245,0.3);
  z-index: 2;
 }
 /*############### nav ####################### */
@@ -114,7 +114,7 @@ body{
  top: 0;
  left: 0;
  height: 100%;
- background: var(--grey);
+ background: rgba(255, 201, 20,0.5);
 transition:all 1s ease-in-out;
  width: 0;
  overflow: hidden;
@@ -860,7 +860,80 @@ margin: 1rem 0;
   }
 
 }
-/* #################quotes section */
+/* ####################blog####################### */
+.blog{
+  color: var(--black)
+}
+.blog__single-blog{
+  margin: 2rem 0;
+}
+.blog__photo-img{
+  width: 100%;
+  display: block;
+}
+
+.blog__info-title{
+  font-size: 2rem;
+  text-transform: capitalize;
+  margin: 1rem 0 0.10rem 0;;
+}
+.blog__info-underline{
+  width: 50px;
+  height: 3px;
+  background: var(--cream);
+  margin-bottom: 1rem;
+}
+.blog__info-text{
+  line-height: 1.5;
+
+}
+.blog__info-link{
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--yellow);
+  text-decoration: none;
+  margin: 0.75rem 0;
+  color: var(--yellow);
+  border:3px solid var(--yellow);
+  background: transparent;
+  transition: all 1s ease-in-out;
+  position: relative;
+}
+.blog__info-link:hover{
+  background: var(--yellow);
+color: var(--black)
+}
+.blog__info-link::after{
+  position: absolute;
+  content: '';
+  width: 50px;
+  height: 2px;
+  top: 50%;
+  right: -40px;
+  background: var(--yellow);
+
+}
+@media screen and (min-width:768px){
+  .blog__single-blog{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .blog__info,.blog__photo{
+    flex:0 0 50%;
+  }
+  .blog__info{
+    align-self: center;
+    padding: 0 1rem;
+  }
+  .blog__single-blog-special{
+    flex-direction: row-reverse
+  }
+}
+/* end of blog section */
+/* #################quotes section #################*/
 .quotes-title__name{
   color: var(--yellow);
 }
@@ -870,17 +943,18 @@ margin: 1rem 0;
 .quote__text{
   color: var(--white);
   line-height: 1.5;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 0 1rem;
 }
 .quote__icon{
   color: var(--yellow);
-  font-size: 6rem;
+  font-size: 4rem;
+  margin: 0 1rem;
 }
 .quote__img{
   border-radius: 50%;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   margin: 1rem auto
 }
 .quote__img-1{
@@ -920,3 +994,117 @@ margin: 1rem 0;
   flex-direction: row-reverse;
 }
 }
+/* ######################flip####################### */
+
+.flip{
+  padding: 4rem 0;  
+}
+.card{
+  width: 40vw;
+  height: 40vh;
+  color: white;
+  position: relative;
+  margin: 2rem auto;
+}
+.card-side{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 2s ease-in-out;
+  transform-style: preserve-3d;
+}
+.card-side-front{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--yellow);
+  backface-visibility: hidden;
+}
+.card-side-back{
+position: absolute;
+width: 100%;
+height: 100%;
+  background: var(--black);
+  backface-visibility: hidden;
+  transform: rotateY(180deg)
+}
+
+.flip-card{
+  transform: rotateY(180deg)
+}
+@media screen and (min-width:768px){
+  .flip{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .card{
+    flex: 0 0 calc(50% - 2rem);
+  }
+}
+/* #####################map#################### */
+.map{
+  position: relative;
+}
+.map__info{
+padding: 0.5rem 0;
+}
+.map__info-single-item{
+text-align: center;
+padding: 2rem 0;
+}
+  .map__info-icon{
+    font-size: 2rem;
+    color: var(--yellow);
+  }
+.map__info-title{
+  text-transform: capitalize;
+  margin: 1rem 0;
+  color: var(--blue);
+}
+.map__info-text{
+  width: 50%;
+  margin: 0 auto;
+  color: var(--grey)
+}
+@media screen and (min-width:768px){
+
+  .map__info{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    background:rgba(46, 40, 42,0.8);
+    display: flex;
+    justify-content: space-around;
+  }
+  .map__info-single-item{
+    margin: 0;
+  }
+  .map__info-text{
+    width: 80%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
