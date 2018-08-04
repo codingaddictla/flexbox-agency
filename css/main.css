@@ -40,6 +40,67 @@ body{
 .item-margin{
   margin: 2rem 0;
 }
+/*######################### section title################## */
+.section-title__container{
+ display: flex;
+ padding: 2rem 1.5rem;
+}
+.section-title__icon{
+ font-size: 4rem;
+ color: var(--yellow);
+ margin-right:  1rem;
+}
+.section-title__text{
+ line-height: 1.5;
+ border-left: 0.3rem solid var(--grey);
+padding-left:1rem;
+}
+.section-title__name{
+ font-size: 2rem;
+ letter-spacing: 0.5rem;
+ text-transform: uppercase;
+}
+.section-title__info{
+ color: var(--grey);
+}
+
+/* #######################section reverse title ############*/
+.reverse-section-title__container{
+  display: flex;
+  flex-direction:row-reverse;
+  padding: 2rem 1.5rem;
+}
+.reverse-section-title__icon{
+  font-size: 4rem;
+  color: var(--yellow);
+  margin-left: 1rem;
+}
+.reverse-section-title__text{
+  line-height: 1.5;
+  border-right: 0.3rem solid var(--grey);
+  padding-right:1rem;
+}
+.reverse-section-title__name{
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+.reverse-section-title__info{
+  color: var(--grey);
+}
+/* different section title colors */
+.section-title__text--border-blue{
+  border-color: var(--blue);
+}
+.section-title__info--blue{
+  color: var(--blue);
+}
+.section-title__name--yellow{
+  color: var(--yellow);
+}
+
+
+
 /* end of stadard padding width */
 .preloader{
  position: fixed;
@@ -117,11 +178,22 @@ body{
  transition: all 1s ease-in-out;
  z-index: 3;
  cursor: pointer;
+ animation-name: pulse;
+ animation-duration: 2s;
+ animation-iteration-count: infinite;
+}
+@keyframes pulse{
+0%{
+  transform: scale(1.0)
+}
+50%{
+  transform: scale(1.3)
+}
+100%{
+  transform: scale(1.0)
+}
 }
 
-.navBtn--action{
- transform: rotate(720deg);
-}
 .nav{
  position: fixed;
  top: 0;
@@ -221,66 +293,6 @@ padding-left: 1.5rem;
  left: 50%;
 }
 }
-/*######################### section title################## */
-.section-title__container{
- display: flex;
- padding: 2rem 1.5rem;
-}
-.section-title__icon{
- font-size: 4rem;
- color: var(--yellow);
- margin-right:  1rem;
-}
-.section-title__text{
- line-height: 1.5;
- border-left: 0.3rem solid var(--grey);
-padding-left:1rem;
-}
-.section-title__name{
- font-size: 2rem;
- letter-spacing: 0.5rem;
- text-transform: uppercase;
-}
-.section-title__info{
- color: var(--grey);
-}
-
-/* #######################section reverse title ############*/
-.reverse-section-title__container{
-  display: flex;
-  flex-direction:row-reverse;
-  padding: 2rem 1.5rem;
-}
-.reverse-section-title__icon{
-  font-size: 4rem;
-  color: var(--yellow);
-  margin-left: 1rem;
-}
-.reverse-section-title__text{
-  line-height: 1.5;
-  border-right: 0.3rem solid var(--grey);
-  padding-right:1rem;
-}
-.reverse-section-title__name{
-  font-size: 2rem;
-  letter-spacing: 0.5rem;
-  text-transform: uppercase;
-}
-.reverse-section-title__info{
-  color: var(--grey);
-}
-/* different section title colors */
-.section-title__text--border-blue{
-  border-color: var(--blue);
-}
-.section-title__info--blue{
-  color: var(--blue);
-}
-.section-title__name--yellow{
-  color: var(--yellow);
-}
-
-
 
 
 /*############################## services section ############*/
